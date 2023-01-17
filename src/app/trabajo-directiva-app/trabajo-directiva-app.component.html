@@ -1,0 +1,28 @@
+<h1 style="text-align: center">{{ tittle }}</h1>
+<form>
+  <input type="text" name="Nombre" [(ngModel)]="nombre" />
+  <br />
+  <br />
+  <input type="text" name="Apellido" [(ngModel)]="apellido" />
+  <br />
+  <br />
+  <input type="text" name="Apellido" [(ngModel)]="cargo" />
+  <br />
+  <br />
+  <input type="submit" value="registrar" (click)="usuarioRegistrado()" />
+  <br />
+  <br />
+</form>
+<br />
+
+<p *ngIf="registrado; else nadieRegistrado">
+  {{ parrafo }} con el nombre de {{ nombre }} {{ apellido }} tiene el cargo de <!--<span [ngStyle]="{color: cargo=='director'?'red':'green'}">--><span [ngClass]="{paraDirectores:cargo=='directores'}">{{cargo}}</span>
+</p>
+
+<ng-template #nadieRegistrado>
+  <p>No se encuentra nadie registrado actualmente</p>
+</ng-template>
+
+<ul>
+  <!--<li *ngFor="let x of entradas;let i=index">{{i}}{{x.t}}</li>-->
+</ul>
